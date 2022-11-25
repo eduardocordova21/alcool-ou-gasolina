@@ -1,6 +1,7 @@
 import 'package:aog/widgets/input.widget.dart';
 import 'package:aog/widgets/loading-button.widget.dart';
 import 'package:aog/widgets/logo.widget.dart';
+import 'package:aog/widgets/success.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text2/flutter_masked_text2.dart';
 
@@ -36,32 +37,7 @@ class HomePage extends StatelessWidget {
       backgroundColor: Theme.of(context).primaryColor,
       body: ListView(children: <Widget>[
         const Logo(),
-        Container(
-          margin: const EdgeInsets.all(30),
-          decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.8),
-              borderRadius: BorderRadius.circular(25)),
-          child: Column(
-            children: <Widget>[
-              const SizedBox(height: 30),
-              Text(
-                "Compensa utilizar álcool!",
-                style: TextStyle(
-                  color: Theme.of(context).primaryColor,
-                  fontSize: 40,
-                  fontFamily: "Big Shoulder Display",
-                ),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 25),
-              LoadingButton(
-                  busy: false,
-                  invert: true,
-                  function: () {},
-                  text: "CALCULAR NOVAMENTE"),
-            ],
-          ),
-        ),
+        Success(result: "Compensa Utilizar X", reset: () {}),
         Input(label: "Álcool", controller: _alcoolController),
         Input(label: "Gasolina", controller: _gasolinaController),
         LoadingButton(
